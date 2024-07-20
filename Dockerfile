@@ -7,4 +7,4 @@ ENV RUST_VERSION=1.79.0-r1 \
     PATH=$PATH:${CARGO_HOME}/bin
 
 RUN apk add --no-cache rust@main=${RUST_VERSION} \
-    cargo 
+    cargo@main=${RUST_VERSION} 
