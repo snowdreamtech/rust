@@ -66,11 +66,11 @@ jobs:
             push: true
             tags: |
               snowdreamtech/rust:build-essential-latest
-              snowdreamtech/rust:build-essential-1.78.0
-              snowdreamtech/rust:build-essential-1.78
+              snowdreamtech/rust:build-essential-1.79.0
+              snowdreamtech/rust:build-essential-1.79
               snowdreamtech/rust:build-essential-1
               ghcr.io/snowdreamtech/rust:build-essential-latest
-              ghcr.io/snowdreamtech/rust:build-essential-1.78.0
-              ghcr.io/snowdreamtech/rust:build-essential-1.78
+              ghcr.io/snowdreamtech/rust:build-essential-1.79.0
+              ghcr.io/snowdreamtech/rust:build-essential-1.79
               ghcr.io/snowdreamtech/rust:build-essential-1
              
