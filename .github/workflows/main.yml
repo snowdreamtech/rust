@@ -66,11 +66,11 @@ jobs:
             push: true
             tags: |
               snowdreamtech/rust:latest
-              snowdreamtech/rust:1.78.0
-              snowdreamtech/rust:1.78
+              snowdreamtech/rust:1.79.0
+              snowdreamtech/rust:1.79
               snowdreamtech/rust:1
               ghcr.io/snowdreamtech/rust:latest
-              ghcr.io/snowdreamtech/rust:1.78.0
-              ghcr.io/snowdreamtech/rust:1.78
+              ghcr.io/snowdreamtech/rust:1.79.0
+              ghcr.io/snowdreamtech/rust:1.79
               ghcr.io/snowdreamtech/rust:1
              
