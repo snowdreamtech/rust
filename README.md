@@ -7,11 +7,11 @@ Docker Image packaging for Rust. (amd64, arm32v6, arm32v7, arm64v8, i386, ppc64l
 # Run
 
 ```bash
-docker run --rm snowdreamtech/rust:latest
+docker run --rm snowdreamtech/rust:build-essential-latest
 ```
 
 ```bash
-docker run -e TZ=Asia/Shanghai --rm snowdreamtech/rust:latest
+docker run -e TZ=Asia/Shanghai --rm snowdreamtech/rust:build-essential-latest
 ```
 
 # Development
