@@ -18,7 +18,7 @@ ENV RUST_VERSION=1.63.0+dfsg1-2 \
 RUN set -eux \
     && apt-get -qqy update  \
     && apt-get -qqy install --no-install-recommends \ 
-    rust=${RUST_VERSION} \
+    rustc=${RUST_VERSION} \
     cargo=${CARGO_VERSION} \
     && apt-get -qqy --purge autoremove \
     && apt-get -qqy clean \
