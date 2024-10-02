@@ -19,6 +19,7 @@ RUN set -eux \
     && apt-get -qqy update  \
     && apt-get -qqy install --no-install-recommends \ 
     rustc=${RUST_VERSION} \
+    libstd-rust-dev=${RUST_VERSION} \
     cargo=${CARGO_VERSION} \
     && apt-get -qqy --purge autoremove \
     && apt-get -qqy clean \
