@@ -9,10 +9,10 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-    org.opencontainers.image.version="1.78.0" \
+    org.opencontainers.image.version="1.83.0" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
 
-ENV RUST_VERSION=1.78.0-r0 \ 
+ENV RUST_VERSION=1.83.0-r0 \ 
     CARGO_HOME=/usr/local/.cargo \
     PATH=$PATH:/usr/local/.cargo/bin
 
