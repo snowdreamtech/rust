@@ -1,4 +1,4 @@
-FROM snowdreamtech/debian:12.8.0
+FROM snowdreamtech/build-essential:bookworm
 
 # OCI annotations to image
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
