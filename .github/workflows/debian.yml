@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+      - "build-essential"
       - "dev"
       - "feat/**"
       - "feature/**"
@@ -109,9 +110,9 @@ jobs:
         uses: docker/metadata-action@v5.6.1
         with:
           images: |
-            name=snowdreamtech/base,enable=true
-            name=ghcr.io/snowdreamtech/base,enable=true
-            name=quay.io/snowdreamtech/base,enable=true
+            name=snowdreamtech/rust,enable=true
+            name=ghcr.io/snowdreamtech/rust,enable=true
+            name=quay.io/snowdreamtech/rust,enable=true
           flavor: |
             latest=false  
             prefix=

@@ -2,23 +2,24 @@ FROM snowdreamtech/alpine:3.21.0
 
 # OCI annotations to image
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
-    org.opencontainers.image.title="Base Image Based On Alpine" \
-    org.opencontainers.image.description="Docker Images for Base on Alpine. (i386, amd64, arm32v6, arm32v7, arm64, ppc64le,riscv64, s390x)" \
-    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/base" \
-    org.opencontainers.image.base.name="snowdreamtech/base:alpine" \
+    org.opencontainers.image.title="Rust Image Based On Alpine" \
+    org.opencontainers.image.description="Docker Images for Rust on Alpine. (i386, amd64, arm32v6, arm32v7, arm64, ppc64le,riscv64, s390x)" \
+    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/rust" \
+    org.opencontainers.image.base.name="snowdreamtech/rust:alpine" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/snowdreamtech/base" \
+    org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-    org.opencontainers.image.version="3.21.0" \
-    org.opencontainers.image.url="https://github.com/snowdreamtech/base"
+    org.opencontainers.image.version="1.83.0" \
+    org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
 
-# keep the docker container running
-ENV KEEPALIVE=1
+ENV RUST_VERSION=1.83.0-r0 \ 
+    CARGO_HOME=/usr/local/.cargo \
+    PATH=$PATH:/usr/local/.cargo/bin
 
 ARG GID=1000 \
     UID=1000  \
-    USER=base \
-    WORKDIR=/home/base
+    USER=rust \
+    WORKDIR=/home/rust
 
 # Create a user with UID and GID
 RUN if [ "${USER}" != "root" ]; then \
@@ -28,7 +29,8 @@ RUN if [ "${USER}" != "root" ]; then \
     fi
 
 RUN apk add --no-cache \
-    vim
+    rust=${RUST_VERSION} \
+    cargo=${RUST_VERSION} 
 
 # Switch to the user
 USER ${USER}
