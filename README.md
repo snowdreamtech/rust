@@ -1,6 +1,6 @@
 # Rust
 
-[![Rust](http://dockeri.co/image/snowdreamtech/rust)](https://hub.docker.com/r/snowdreamtech/rust)
+[![dockeri.co](https://dockerico.blankenship.io/image/snowdreamtech/rust)](https://hub.docker.com/r/snowdreamtech/rust)
 
 Docker Image packaging for Rust. (amd64, arm32v6, arm32v7, arm64v8, i386, ppc64le,riscv64, s390x)
 
