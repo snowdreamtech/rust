@@ -9,7 +9,7 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-    org.opencontainers.image.version="1.63.0" \
+    org.opencontainers.image.version="1.85.0" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
 
 # Switch to the user
@@ -50,8 +50,8 @@ ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
     USER=${USER} \
     WORKDIR=${WORKDIR} 
 
-ENV RUST_VERSION=1.63.0+dfsg1-2 \ 
-    CARGO_VERSION=0.66.0+ds1-1 
+ENV RUST_VERSION=1.85.0+dfsg3-1 \ 
+    CARGO_VERSION=1.85.0+dfsg3-1
 
 RUN set -eux \
     && apt-get -qqy update  \
