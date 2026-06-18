@@ -1,4 +1,4 @@
-# Base
+# Rust
 
 ![Docker Image Version](https://img.shields.io/docker/v/snowdreamtech/rust)
 ![Docker Image Size](https://img.shields.io/docker/image-size/snowdreamtech/rust/latest)

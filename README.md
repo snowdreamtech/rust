@@ -7,7 +7,7 @@
 
 Docker Image packaging for Rust. (amd64, arm32v5,  arm32v6, arm32v7, arm64v8, i386, mips64le, ppc64le,riscv64, s390x)
 
-# Usage
+## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
 
@@ -62,7 +62,7 @@ services:
     restart: unless-stopped
 ```
 
-# Development
+## Development
 
 ```bash
 docker buildx create --use --name build --node build --driver-opt network=host
