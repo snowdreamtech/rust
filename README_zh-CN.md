@@ -23,7 +23,7 @@ Docker 基础模板作为构建容器化应用程序的基础起点。它提供�
 ```bash
 # 拉取并运行默认的 Debian 变体
 docker pull snowdreamtech/rust:debian
-docker run -d --name=base -e TZ=Asia/Shanghai snowdreamtech/rust:debian
+docker run -d --name=rust -e TZ=Asia/Shanghai snowdreamtech/rust:debian
 
 # 或使用 docker-compose
 docker-compose up -d
@@ -37,7 +37,7 @@ docker-compose up -d
 
 ```bash
 docker run -d \
-  --name=base \
+  --name=rust \
   -e TZ=Asia/Shanghai \
   --restart unless-stopped \
   snowdreamtech/rust:debian
@@ -53,7 +53,7 @@ docker run -d \
 
 ```bash
 docker run -d \
-  --name=base \
+  --name=rust \
   -e TZ=Asia/Shanghai \
   --restart unless-stopped \
   snowdreamtech/rust:alpine
@@ -69,7 +69,7 @@ docker run -d \
 
 ```bash
 docker run -d \
-  --name=base \
+  --name=rust \
   -e TZ=Asia/Shanghai \
   --restart unless-stopped \
   snowdreamtech/rust:rocky
@@ -164,7 +164,7 @@ docker build \
 
 ```bash
 docker run -d \
-  --name=base \
+  --name=rust \
   -e PUID=1000 \
   -e PGID=1000 \
   -e USER=appuser \
@@ -179,9 +179,9 @@ docker run -d \
 
 ```yaml
 services:
-  base:
+  rust:
     image: snowdreamtech/rust:debian
-    container_name: base
+    container_name: rust
     environment:
       - TZ=Asia/Shanghai
     restart: unless-stopped
@@ -191,9 +191,9 @@ services:
 
 ```yaml
 services:
-  base:
+  rust:
     image: snowdreamtech/rust:debian
-    container_name: base
+    container_name: rust
     environment:
       - TZ=Asia/Shanghai
       - DEBUG=true
@@ -288,24 +288,24 @@ docker run -e DEBUG=true snowdreamtech/rust:debian
 make build
 
 # 构建特定变体
-docker build -t base:debian ./docker/debian/
-docker build -t base:alpine ./docker/alpine/
-docker build -t base:rocky ./docker/rocky/
+docker build -t rust:debian ./docker/debian/
+docker build -t rust:alpine ./docker/alpine/
+docker build -t rust:rocky ./docker/rocky/
 ```
 
 ### 测试
 
 ```bash
 # 测试默认配置
-docker run --rm base:debian id
+docker run --rm rust:debian id
 
 # 测试自定义用户创建
-docker build --build-arg PUID=1000 --build-arg PGID=1000 --build-arg USER=testuser -t base:debian-test ./docker/debian/
-docker run --rm base:debian-test id
+docker build --build-arg PUID=1000 --build-arg PGID=1000 --build-arg USER=testuser -t rust:debian-test ./docker/debian/
+docker run --rm rust:debian-test id
 # 预期输出：uid=1000(testuser) gid=1000(testuser)
 
 # 测试 DEBUG 模式
-docker run --rm -e DEBUG=true base:debian
+docker run --rm -e DEBUG=true rust:debian
 ```
 
 ## 参考资料
@@ -317,7 +317,7 @@ docker run --rm -e DEBUG=true base:debian
 5. [Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide](https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/)
 6. [docker/buildx](https://github.com/docker/buildx)
 
-## 联系方式（备注：base）
+## 联系方式（备注：rust）
 
 * Email: <sn0wdr1am@qq.com>
 * QQ: 3217680847
