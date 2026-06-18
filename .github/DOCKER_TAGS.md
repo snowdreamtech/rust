@@ -1,6 +1,6 @@
 # Docker Image Tags Reference
 
-This document describes the Docker image tagging strategy for the base template project.
+This document describes the Docker image tagging strategy for the Rust project.
 
 ## Tag Naming Convention
 
@@ -228,9 +228,9 @@ docker pull snowdreamtech/rust:nightly-rocky
 ### Development Flow
 
 ```
-1. Push to dev → base:dev-alpine, base:dev-debian, base:dev, base:dev-rocky
-2. Push to main → base:main-alpine, base:latest-alpine, base:main-debian, base:latest-debian, base:main, base:latest, base:main-rocky, base:latest-rocky
-3. Create tag → base:VERSION-variant, base:latest-variant (+ unsuffixed for Debian)
+1. Push to dev → rust:dev-alpine, rust:dev-debian, rust:dev, rust:dev-rocky
+2. Push to main → rust:main-alpine, rust:latest-alpine, rust:main-debian, rust:latest-debian, rust:main, rust:latest, rust:main-rocky, rust:latest-rocky
+3. Create tag → rust:VERSION-variant, rust:latest-variant (+ unsuffixed for Debian)
 ```
 
 ### Release Flow (with Release Please)
