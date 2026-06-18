@@ -1,4 +1,4 @@
-# Base Image (Debian Variant)
+# Rust Image (Debian Variant)
 # Extends snowdreamtech/debian with additional tooling and configuration.
 
 FROM snowdreamtech/debian:13.5.0
@@ -21,17 +21,17 @@ ARG BUILDTIME \
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
-    org.opencontainers.image.title="Base Image Based On Debian" \
-    org.opencontainers.image.description="Docker Images for Base on Debian. (i386, amd64, arm32v5, arm32v7, arm64, mips64le, ppc64le, s390x)" \
-    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/base" \
-    org.opencontainers.image.base.name="snowdreamtech/base:debian" \
+    org.opencontainers.image.title="Rust Image Based On Debian" \
+    org.opencontainers.image.description="Docker Images for Rust on Debian. (i386, amd64, arm32v5, arm32v7, arm64, mips64le, ppc64le, s390x)" \
+    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/rust" \
+    org.opencontainers.image.base.name="snowdreamtech/rust:debian" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/snowdreamtech/base" \
+    org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
     org.opencontainers.image.version="${VERSION:-13.5.0}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
-    org.opencontainers.image.url="https://github.com/snowdreamtech/base"
+    org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
 
 # Runtime Environment Configuration
 ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
@@ -46,11 +46,18 @@ ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
     USER=${USER} \
     WORKDIR=${WORKDIR}
 
-# Additional tooling and configuration for Base image
+ENV RUST_VERSION=1.85.0+dfsg3-1 \
+    CARGO_VERSION=1.85.0+dfsg3-1 \
+    CARGO_HOME=/usr/local/.cargo \
+    PATH=$PATH:/usr/local/.cargo/bin
+
+# Additional tooling and configuration for Rust image
 RUN set -eux \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy update \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy install --no-install-recommends \
-    vim \
+    rustc=${RUST_VERSION} \
+    libstd-rust-dev=${RUST_VERSION} \
+    cargo=${CARGO_VERSION} \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy --purge autoremove \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy clean \
     && rm -rf /var/lib/apt/lists/* \
