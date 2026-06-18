@@ -44,8 +44,8 @@ ENV KEEPALIVE=${KEEPALIVE} \
     USER=${USER} \
     WORKDIR=${WORKDIR}
 
-ENV RUST_VERSION=1.85.0 \
-    CARGO_VERSION=1.85.0 \
+ENV RUST_VERSION=1.92.0 \
+    CARGO_VERSION=1.92.0 \
     CARGO_HOME=/usr/local/.cargo \
     PATH=$PATH:/usr/local/.cargo/bin
 
