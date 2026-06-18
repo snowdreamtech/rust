@@ -45,6 +45,7 @@ ENV KEEPALIVE=${KEEPALIVE} \
     WORKDIR=${WORKDIR}
 
 ENV RUST_VERSION=1.96.0-r0 \
+    CARGO_VERSION=1.96.0-r0 \
     CARGO_HOME=/usr/local/.cargo \
     PATH=$PATH:/usr/local/.cargo/bin
 
@@ -52,7 +53,7 @@ ENV RUST_VERSION=1.96.0-r0 \
 RUN apk update \
     && apk add --no-cache \
     rust=${RUST_VERSION} \
-    cargo=${RUST_VERSION}
+    cargo=${CARGO_VERSION}
 
 # Container Orchestration Files
 COPY entrypoint.d /usr/local/bin/entrypoint.d
