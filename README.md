@@ -80,7 +80,7 @@ docker buildx build -t snowdreamtech/rust --platform=linux/386,linux/amd64,linux
 
 ## Contact (备注：rust)
 
-* Email: sn0wdr1am@qq.com
+* Email: <sn0wdr1am@qq.com>
 * QQ: 3217680847
 * QQ群: 949022145
 * WeChat/微信群: sn0wdr1am
