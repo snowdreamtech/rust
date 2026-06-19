@@ -56,12 +56,12 @@ ENV RUST_VERSION=${RUST_VERSION} \
 
 # Additional tooling and configuration for Rust image
 RUN set -eux \
-    && dnf -y --allowerasing update \
-    && dnf -y --allowerasing install \
+    && dnf -y --disablerepo=devel --allowerasing update \
+    && dnf -y --disablerepo=devel --allowerasing install \
     rust-${RUST_VERSION} \
     cargo-${CARGO_VERSION} \
-    && dnf -y --allowerasing autoremove \
-    && dnf -y --allowerasing clean all \
+    && dnf -y --disablerepo=devel --allowerasing autoremove \
+    && dnf -y --disablerepo=devel --allowerasing clean all \
     && rm -rf /var/cache/dnf \
     && rm -rf /tmp/* \
     && rm -rf /var/tmp/*
