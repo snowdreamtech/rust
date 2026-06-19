@@ -484,6 +484,8 @@ jobs:
                 printf '  ✓ User context: ' && id -un && \
                 printf '  ✓ Package manager: ' && \
                 ${pkg_check} && echo 'functional' && \
+                printf '  ✓ Rust version: ' && rustc --version && \
+                printf '  ✓ Cargo version: ' && cargo --version && \
                 echo '  ✓ All checks passed'
               "; then
               return 0
