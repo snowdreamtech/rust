@@ -17,7 +17,9 @@ ARG BUILDTIME \
     PGID=0 \
     PUID=0 \
     USER=root \
-    WORKDIR=/root
+    WORKDIR=/root \
+    RUST_VERSION=1.85.0+dfsg3-1 \
+    CARGO_VERSION=1.85.0+dfsg3-1
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -46,8 +48,8 @@ ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
     USER=${USER} \
     WORKDIR=${WORKDIR}
 
-ENV RUST_VERSION=1.85.0+dfsg3-1 \
-    CARGO_VERSION=1.85.0+dfsg3-1 \
+ENV RUST_VERSION=${RUST_VERSION} \
+    CARGO_VERSION=${CARGO_VERSION} \
     CARGO_HOME=/usr/local/.cargo \
     PATH=$PATH:/usr/local/.cargo/bin
 
