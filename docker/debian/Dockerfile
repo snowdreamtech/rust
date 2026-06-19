@@ -17,9 +17,12 @@ ARG BUILDTIME \
     PGID=0 \
     PUID=0 \
     USER=root \
-    WORKDIR=/root \
-    RUST_VERSION=1.85.0+dfsg3-1 \
+    WORKDIR=/root
+
+# x-release-please-start-version
+ARG RUST_VERSION=1.85.0+dfsg3-1 \
     CARGO_VERSION=1.85.0+dfsg3-1
+# x-release-please-end
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -30,10 +33,13 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-    org.opencontainers.image.version="${VERSION:-1.85.0}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
+
+# x-release-please-start-version
+LABEL org.opencontainers.image.version="${VERSION:-1.85.0}"
+# x-release-please-end
 
 # Runtime Environment Configuration
 ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
