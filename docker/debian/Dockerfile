@@ -20,8 +20,8 @@ ARG BUILDTIME \
     WORKDIR=/root
 
 # x-release-please-start-version
-ARG RUST_VERSION=1.85.0+dfsg3-1 \
-    CARGO_VERSION=1.85.0+dfsg3-1
+ARG RUST_VERSION=1.85.0 \
+    CARGO_VERSION=1.85.0
 # x-release-please-end
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
