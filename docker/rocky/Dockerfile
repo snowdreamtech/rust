@@ -16,12 +16,9 @@ ARG BUILDTIME \
     PGID=0 \
     PUID=0 \
     USER=root \
-    WORKDIR=/root
-
-# x-release-please-start-version
-ARG RUST_VERSION=1.92.0 \
+    WORKDIR=/root \
+    RUST_VERSION=1.92.0 \
     CARGO_VERSION=1.92.0
-# x-release-please-end
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
