@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.85.0](https://github.com/snowdreamtech/rust/compare/debian-v1.85.0...debian-v1.85.0) (2026-06-19)
+## [1.85.0](https://github.com/snowdreamtech/rust/compare/debian-v1.85.0...debian-v1.85.0) (2026-06-27)
 
 
 ### 🐛 Bug Fixes
@@ -15,6 +15,7 @@
 
 ### ♻️ Miscellaneous Chores
 
+* release main ([b1869f2](https://github.com/snowdreamtech/rust/commit/b1869f2b03c6e4fe6336835570cbb3bd91a2b49f))
 * release main ([67dbaf6](https://github.com/snowdreamtech/rust/commit/67dbaf6ec1c85f0b9f20303ce56e0795b287ab1b))
 * release main ([6f0b99a](https://github.com/snowdreamtech/rust/commit/6f0b99acd58c444cff3ca13f90a0769244a80f8c))
 * release main ([78328d2](https://github.com/snowdreamtech/rust/commit/78328d20bd3697d48ea90aee8d0eaa6af4ccc09c))
@@ -25,6 +26,7 @@
 * release main ([36d1211](https://github.com/snowdreamtech/rust/commit/36d1211036847a8c6aaa01a21a1c695a47b71d45))
 * release main ([9ad4f94](https://github.com/snowdreamtech/rust/commit/9ad4f9490832efdc310f2ebbd8c77f3404daf07f))
 * release main ([b0684a3](https://github.com/snowdreamtech/rust/commit/b0684a32a652e83506451e6056168cfec8b9142c))
+* **release:** deduplicate CHANGELOG headers ([cd4d0f5](https://github.com/snowdreamtech/rust/commit/cd4d0f5b8c90bb6fec61bb760cbf1e639f4a2134))
 * **release:** deduplicate CHANGELOG headers ([2238a8d](https://github.com/snowdreamtech/rust/commit/2238a8d64f4b0c4fbb227ea0897a2484e959fcc8))
 * **release:** deduplicate CHANGELOG headers ([2bbd926](https://github.com/snowdreamtech/rust/commit/2bbd926f6f1b396562fe16d1feb677698fc2e305))
 * **release:** deduplicate CHANGELOG headers ([27919e4](https://github.com/snowdreamtech/rust/commit/27919e4baf4aab5b2a2bf32a7d437b05a717c11b))
