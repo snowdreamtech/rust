@@ -210,7 +210,7 @@ services:
 示例：
 
 - `snowdreamtech/rust:1.85.0-debian`
-- `snowdreamtech/rust:1.96.0-alpine`
+- `snowdreamtech/rust:1.96.1-alpine`
 - `snowdreamtech/rust:1.92.0-rocky`
 
 此格式允许：
