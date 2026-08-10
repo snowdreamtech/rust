@@ -1,5 +1,5 @@
 {
-  "docker/alpine": "1.83.0",
+  "docker/alpine": "1.96.0",
   "docker/debian": "1.85.0",
   "docker/rocky": "1.92.0"
 }
