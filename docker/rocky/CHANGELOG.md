@@ -8,7 +8,7 @@
 * prevent release-please from modifying base rust versions ([7916ce2](https://github.com/snowdreamtech/rust/commit/7916ce25821bafd7b5cfae4a6cd015aeba6a7d7f))
 
 
-### 🛠 Refactoring
+### 🐛 Bug Fixes
 
 * migrate Dockerfiles to dev skeleton and update rust versions ([48cd0bb](https://github.com/snowdreamtech/rust/commit/48cd0bbc3af6ce2bdc22b10e3aeea8e40a633752))
 
@@ -35,4 +35,3 @@
 * **release:** deduplicate CHANGELOG headers ([1d82410](https://github.com/snowdreamtech/rust/commit/1d82410d6038be22d7741f1519826f30023b0f3e))
 * **release:** deduplicate CHANGELOG headers ([5e1a539](https://github.com/snowdreamtech/rust/commit/5e1a5390319933b48d20ad993714587d826c0aa7))
 * **release:** implement automatic changelog deduplication step ([282c220](https://github.com/snowdreamtech/rust/commit/282c22081e1ad7a1a010a7f297d20bc7c9b416a7))
-

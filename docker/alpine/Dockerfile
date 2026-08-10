@@ -1,7 +1,7 @@
 # Rust Image (Alpine Variant)
 # Extends snowdreamtech/alpine with additional tooling and configuration.
 
-FROM snowdreamtech/alpine:3.24.0
+FROM ghcr.io/snowdreamtech/alpine:3.24.1
 
 # Build-time Configuration
 ARG BUILDTIME \
@@ -17,8 +17,8 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    RUST_VERSION=1.96.0-r0 \
-    CARGO_VERSION=1.96.0-r0
+    RUST_VERSION=1.83.0-r1 \
+    CARGO_VERSION=1.83.0-r1
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -29,13 +29,12 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
+    org.opencontainers.image.version="${VERSION}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
 
-# x-release-please-start-version
-LABEL org.opencontainers.image.version="${VERSION:-1.96.0}"
-# x-release-please-end
+
 
 # Runtime Environment Configuration
 ENV KEEPALIVE=${KEEPALIVE} \
