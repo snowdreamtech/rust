@@ -17,8 +17,8 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    RUST_VERSION=1.96.0-r0 \
-    CARGO_VERSION=1.96.0-r0
+    RUST_VERSION=1.96.1-r0 \
+    CARGO_VERSION=1.96.1-r0
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
