@@ -17,7 +17,6 @@ All tags are pushed to three registries:
 
 - **DockerHub**: `snowdreamtech/rust:TAG`
 - **GitHub Container Registry**: `ghcr.io/snowdreamtech/rust:TAG`
-- **Quay.io**: `quay.io/snowdreamtech/rust:TAG`
 
 ## Tag Scenarios
 
@@ -275,7 +274,6 @@ The key configuration that enables this tagging strategy:
 images: |
   name=snowdreamtech/rust,enable=true
   name=ghcr.io/snowdreamtech/rust,enable=true
-  name=quay.io/snowdreamtech/rust,enable=true
 flavor: |
   latest=false
   prefix=
