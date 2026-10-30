@@ -202,13 +202,13 @@ Images follow semantic versioning with the format: `{major}.{minor}.{patch}-{var
 
 Examples:
 
-- `snowdreamtech/rust:1.85.0-debian`
+- `snowdreamtech/rust:1.85.1-debian`
 - `snowdreamtech/rust:1.96.1-alpine`
 - `snowdreamtech/rust:1.92.0-rocky`
 
 This format allows:
 
-- **Full version pinning**: `1.85.0-debian` (Exact version)
+- **Full version pinning**: `1.85.1-debian` (Exact version)
 - **Variant latest tag**: `latest-debian` (Tracks the latest version for Debian)
 - **Global latest tag**: `latest` (Tracks the latest version, defaults to Debian)
 

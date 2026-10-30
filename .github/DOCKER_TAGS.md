@@ -8,8 +8,8 @@ All images use the format: `snowdreamtech/rust:TAG`
 
 Where `TAG` follows these patterns:
 
-- **Variant-specific tags**: `TAG-variant` (e.g., `nightly-alpine`, `1.96.0-alpine`)
-- **Default tags** (Debian only): `TAG` (e.g., `nightly`, `latest`, `1.85.0`)
+- **Variant-specific tags**: `TAG-variant` (e.g., `nightly-alpine`, `1.96.1-alpine`)
+- **Default tags** (Debian only): `TAG` (e.g., `nightly`, `latest`, `1.85.1`)
 
 ## Supported Registries
 
@@ -63,30 +63,30 @@ snowdreamtech/rust:latest-rocky
 #### Alpine Release
 
 ```bash
-git tag alpine-v1.96.0
-git push origin alpine-v1.96.0
+git tag alpine-v1.96.1
+git push origin alpine-v1.96.1
 ```
 
 **Generated tags:**
 
 ```
-snowdreamtech/rust:1.96.0-alpine
+snowdreamtech/rust:1.96.1-alpine
 snowdreamtech/rust:latest-alpine
 ```
 
 #### Debian Release
 
 ```bash
-git tag debian-v1.85.0
-git push origin debian-v1.85.0
+git tag debian-v1.85.1
+git push origin debian-v1.85.1
 ```
 
 **Generated tags:**
 
 ```
-snowdreamtech/rust:1.85.0-debian
+snowdreamtech/rust:1.85.1-debian
 snowdreamtech/rust:latest-debian
-snowdreamtech/rust:1.85.0           # ← Debian (default)
+snowdreamtech/rust:1.85.1           # ← Debian (default)
 snowdreamtech/rust:latest           # ← Debian (default)
 ```
 
@@ -138,7 +138,7 @@ Tags are generated with the following priority (higher number = higher priority)
 |----------|------|--------------|---------|
 | 1000 | Nightly | `nightly`, `nightly-alpine` | Schedule |
 | 900 | Date | `20260427`, `20260427-alpine` | Schedule |
-| 800 | Version | `1.96.0-alpine`, `1.85.0` | Tag push |
+| 800 | Version | `1.96.1-alpine`, `1.85.1` | Tag push |
 | 600 | Branch | `dev-alpine`, `main-debian` | Branch push |
 | 200 | Latest | `latest`, `latest-alpine` | Main/Tag |
 
@@ -154,8 +154,8 @@ Debian is designated as the **default variant** (`is_latest: true`), which means
 snowdreamtech/rust:nightly-debian   # Variant-specific
 snowdreamtech/rust:nightly          # Default (no suffix)
 
-snowdreamtech/rust:1.85.0-debian    # Variant-specific
-snowdreamtech/rust:1.85.0           # Default (no suffix)
+snowdreamtech/rust:1.85.1-debian    # Variant-specific
+snowdreamtech/rust:1.85.1           # Default (no suffix)
 
 snowdreamtech/rust:latest-debian    # Variant-specific
 snowdreamtech/rust:latest           # Default (no suffix)
@@ -195,12 +195,12 @@ docker pull snowdreamtech/rust:latest-rocky
 ### Pull a specific version
 
 ```bash
-# Alpine 1.96.0
-docker pull snowdreamtech/rust:1.96.0-alpine
+# Alpine 1.96.1
+docker pull snowdreamtech/rust:1.96.1-alpine
 
-# Debian 1.85.0 (two ways)
-docker pull snowdreamtech/rust:1.85.0-debian
-docker pull snowdreamtech/rust:1.85.0
+# Debian 1.85.1 (two ways)
+docker pull snowdreamtech/rust:1.85.1-debian
+docker pull snowdreamtech/rust:1.85.1
 
 # Rocky 1.92.0
 docker pull snowdreamtech/rust:1.92.0-rocky
@@ -250,11 +250,11 @@ The workflow uses a matrix strategy with three variants:
 matrix:
   include:
     - variant: alpine
-      version: "1.96.0"
+      version: "1.96.1"
       is_latest: false
 
     - variant: debian
-      version: "1.85.0"
+      version: "1.85.1"
       is_latest: true    # ← Default variant
 
     - variant: rocky

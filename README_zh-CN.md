@@ -209,13 +209,13 @@ services:
 
 示例：
 
-- `snowdreamtech/rust:1.85.0-debian`
+- `snowdreamtech/rust:1.85.1-debian`
 - `snowdreamtech/rust:1.96.1-alpine`
 - `snowdreamtech/rust:1.92.0-rocky`
 
 此格式允许：
 
-- **完整版本固定**：`1.85.0-debian`（精确版本）
+- **完整版本固定**：`1.85.1-debian`（精确版本）
 - **变体最新标签**：`latest-debian`（跟踪 Debian 的最新版本）
 - **全局最新标签**：`latest`（跟踪最新版本，默认使用 Debian）
 
