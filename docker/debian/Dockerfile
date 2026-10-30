@@ -1,14 +1,11 @@
-# Base Image (Debian Variant)
+# Rust Image (Debian Variant)
 # Extends snowdreamtech/debian with additional tooling and configuration.
 
-FROM ghcr.io/snowdreamtech/debian:13.6.0
+FROM ghcr.io/snowdreamtech/debian:13.7.0
 
 # Build-time Configuration
-# x-release-please-start-version
-ARG VERSION="13.6.0"
-# x-release-please-end
-
 ARG BUILDTIME \
+    VERSION \
     REVISION \
     DEBIAN_FRONTEND=noninteractive \
     KEEPALIVE=0 \
@@ -22,19 +19,25 @@ ARG BUILDTIME \
     USER=root \
     WORKDIR=/root
 
+# x-release-please-start-version
+ARG RUST_VERSION=1.85.1
+# x-release-please-end
+
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
-    org.opencontainers.image.title="Base Image Based On Debian" \
-    org.opencontainers.image.description="Docker Images for Base on Debian. (amd64, arm32v7, arm64, ppc64le, riscv64, s390x)" \
-    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/base" \
-    org.opencontainers.image.base.name="snowdreamtech/base:debian" \
+    org.opencontainers.image.title="Rust Image Based On Debian" \
+    org.opencontainers.image.description="Docker Images for Rust on Debian. (amd64, arm32v7, arm64, ppc64le, riscv64, s390x)" \
+    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/rust" \
+    org.opencontainers.image.base.name="snowdreamtech/debian:13.7.0" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/snowdreamtech/base" \
+    org.opencontainers.image.source="https://github.com/snowdreamtech/rust" \
     org.opencontainers.image.vendor="Snowdream Tech" \
     org.opencontainers.image.version="${VERSION}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
-    org.opencontainers.image.url="https://github.com/snowdreamtech/base"
+    org.opencontainers.image.url="https://github.com/snowdreamtech/rust"
+
+
 
 # Runtime Environment Configuration
 ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
@@ -47,13 +50,22 @@ ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
     PGID=${PGID} \
     PUID=${PUID} \
     USER=${USER} \
-    WORKDIR=${WORKDIR}
+    WORKDIR=${WORKDIR} \
+    RUST_VERSION=${RUST_VERSION} \
+    CARGO_HOME=/usr/local/.cargo \
+    PATH=$PATH:/usr/local/.cargo/bin
 
-# Additional tooling and configuration for Base image
+# Additional tooling and configuration for Rust image
 RUN set -eux \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy update \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy install --no-install-recommends \
-    vim \
+    "rustc=${RUST_VERSION}*" \
+    "libstd-rust-dev=${RUST_VERSION}*" \
+    "cargo=${RUST_VERSION}*" \
+    || DEBIAN_FRONTEND=noninteractive apt-get -qqy install --no-install-recommends \
+    rustc \
+    libstd-rust-dev \
+    cargo \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy --purge autoremove \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy clean \
     && rm -rf /var/lib/apt/lists/* \
